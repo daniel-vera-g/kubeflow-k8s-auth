@@ -1,0 +1,16 @@
+apiVersion: kubeflow.org/v1beta1
+kind: Profile
+metadata:
+  name: charlie-namespace
+spec:
+  owner:
+    kind: User
+    name: charlie@test.com
+
+  resourceQuotaSpec:
+    hard:
+      cpu: "2"
+      memory: 2Gi
+      requests.nvidia.com/gpu: "1"
+      persistentvolumeclaims: "1"
+      requests.storage: "5Gi"

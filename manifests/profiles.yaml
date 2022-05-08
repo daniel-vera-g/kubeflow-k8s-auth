@@ -1,0 +1,26 @@
+apiVersion: kubeflow.org/v1beta1
+kind: Profile
+metadata:
+  name: daniel-namespace
+spec:
+  owner:
+    kind: User
+    name: daniel@test.com
+---
+apiVersion: kubeflow.org/v1beta1
+kind: Profile
+metadata:
+  name: bob-namespace
+spec:
+  owner:
+    kind: User
+    name: bob@test.com
+---
+apiVersion: kubeflow.org/v1beta1
+kind: Profile
+metadata:
+  name: charlie-namespace
+spec:
+  owner:
+    kind: User
+    name: charlie@test.com

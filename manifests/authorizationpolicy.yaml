@@ -1,0 +1,16 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  annotations:
+    role: edit
+    user: daniel@test.com
+  name: user-daniel-test-com-clusterrole-edit
+  namespace: charlie-namespace
+spec:
+  action: ALLOW
+  rules:
+    - when:
+        - key: request.headers[kubeflow-userid]
+          values:
+            - daniel@test.com
+

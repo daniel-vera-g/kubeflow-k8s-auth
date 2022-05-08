@@ -1,0 +1,33 @@
+issuer: http://dex.auth.svc.cluster.local:5556/dex
+storage:
+  type: kubernetes
+  config:
+    inCluster: true
+web:
+  http: 0.0.0.0:5556
+logger:
+  level: "debug"
+  format: text
+oauth2:
+  skipApprovalScreen: true
+enablePasswordDB: true
+staticPasswords:
+- email: user@example.com
+  hash: $2y$12$4K/VkmDd1q1Orb3xAt82zu8gk7Ad6ReFR4LCP9UeYE90NLiN9Df72
+  username: user
+  userID: "15841185641784"
+- email: daniel@test.com
+  hash: $2y$10$uFT3mTwg6D7kyv/vmvzeUOn1UR9GJRLHCH3c9D65j/pv4.YkbKeDW
+  username: daniel
+- email: bob@test.com
+  hash: $2y$10$qlHJyj2U9xNzBkg/DxS1e.0.xrq4QJgXx10tz55M1yEcOO7Q5hDZq
+  username: bob
+- email: charlie@test.com
+  hash: $2y$10$UrDSSMFVhrQJLwxw23cGHudySdp7BZcfESy7zi7upGQsx9cyK6ddy
+  username: charlie
+staticClients:
+# https://github.com/dexidp/dex/pull/1664
+- idEnv: OIDC_CLIENT_ID
+  redirectURIs: ["/login/oidc"]
+  name: 'Dex Login Application'
+  secretEnv: OIDC_CLIENT_SECRET
