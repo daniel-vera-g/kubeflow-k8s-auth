@@ -1,0 +1,5 @@
+.obsidian/*
+.obsidian.vimrc
+TODO.md
+.DS_Store
+.vscode
